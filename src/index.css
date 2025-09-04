@@ -1,1 +1,34 @@
 @import 'tailwindcss';
+
+/* Define theme variables for Tailwind */
+@theme {
+  --color-primary-100: #ebddfe;
+  --color-primary-600: #7c4ddb;
+  --color-primary-700: #5b31b5;
+  --color-secondary-600: #52e066;
+}
+
+/* Register the same variables with @property (for animations / typing) */
+@property --color-primary-100 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #ebddfe;
+}
+
+@property --color-primary-600 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #7c4ddb;
+}
+
+@property --color-primary-700 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #5b31b5;
+}
+
+@property --color-secondary-600 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #52e066;
+}
