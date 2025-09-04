@@ -7,11 +7,20 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
-    alias: {
-      '@domain/*': resolve(join(__dirname, 'src/domain/*')),
-      '@application/*': resolve(join(__dirname, 'src/application/*')),
-      '@infrastructure/*': resolve(join(__dirname, 'src/infrastructure/*')),
-      '@presentation/*': resolve(join(__dirname, 'src/presentation/*')),
-    },
+    alias: [
+      { find: '@domain', replacement: resolve(join(__dirname, 'src/domain')) },
+      {
+        find: '@application',
+        replacement: resolve(join(__dirname, 'src/application')),
+      },
+      {
+        find: '@infrastructure',
+        replacement: resolve(join(__dirname, 'src/infrastructure')),
+      },
+      {
+        find: '@presentation',
+        replacement: resolve(join(__dirname, 'src/presentation')),
+      },
+    ],
   },
 })
