@@ -2,7 +2,7 @@ import type { InputFieldProps } from './input-type'
 
 const InputField = ({ leftIcon, rightIcon, ...props }: InputFieldProps) => {
   return (
-    <div className='flex items-center w-full bg-[#f3f4f6] rounded-xl px-3 py-2 shadow-sm'>
+    <div className='flex items-center w-full bg-[#f3f4f6] rounded-xl px-3 py-1 shadow-sm'>
       {leftIcon && <span className='mr-2'>{leftIcon}</span>}
       <input
         {...props}
