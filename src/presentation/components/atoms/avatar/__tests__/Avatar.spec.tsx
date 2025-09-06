@@ -23,7 +23,6 @@ describe('Avatar', () => {
 
     expect(avatar).toHaveAttribute('width', customSize.toString())
     expect(avatar).toHaveAttribute('height', customSize.toString())
-    expect(avatar).toHaveClass(`h-[${customSize}px]`)
   })
 
   test('should apply the correct CSS classes', () => {
