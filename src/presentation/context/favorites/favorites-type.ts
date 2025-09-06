@@ -1,13 +1,13 @@
 import type { Dispatch, ReactNode } from 'react'
 
-import type { Character } from '@domain/entities/Character'
+import type { CharacterEntity } from '@domain/entities/character-entity'
 
 /**
  * State for the favorites context.
  */
 export interface FavoriteState {
   /** List of favorite characters. */
-  listFavorites: Character[]
+  listFavorites: CharacterEntity[]
 }
 
 /**
@@ -22,8 +22,8 @@ export enum FavoriteActions {
  * Reducer action shape.
  */
 export type FavoriteAction =
-  | { type: FavoriteActions.ADD; payload: Character }
-  | { type: FavoriteActions.REMOVE; payload: { id: Character['id'] } }
+  | { type: FavoriteActions.ADD; payload: CharacterEntity }
+  | { type: FavoriteActions.REMOVE; payload: { id: CharacterEntity['id'] } }
 
 export interface FavoritesContextValue {
   state: FavoriteState
@@ -35,11 +35,11 @@ export interface FavoritesContextValue {
  */
 export interface FavoritesValue extends FavoriteState {
   /** Returns true if a character with given id is a favorite. */
-  isFavorite: (id: Character['id']) => boolean
+  isFavorite: (id: CharacterEntity['id']) => boolean
   /** Adds a character to favorites (idempotent). */
-  addFavorite: (character: Character) => void
+  addFavorite: (character: CharacterEntity) => void
   /** Removes a character from favorites (no-op if not present). */
-  removeFavorite: (id: Character['id']) => void
+  removeFavorite: (id: CharacterEntity['id']) => void
 }
 
 /**
