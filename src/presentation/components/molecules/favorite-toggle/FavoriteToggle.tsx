@@ -11,7 +11,7 @@ const FavoriteToggle = ({
   className = '',
 }: FavoriteToggleProps) => {
   const isActive = !!active
-  const computedClassName = `grid h-8 w-8 place-items-center rounded-full transition-opacity hover:opacity-80 ${className}`
+  const computedClassName = `grid h-8 w-8 place-items-center rounded-full transition-opacity hover:opacity-80 ${className} cursor-pointer`
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation()

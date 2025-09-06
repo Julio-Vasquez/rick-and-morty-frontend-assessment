@@ -15,7 +15,7 @@ const CharacterDetailsCard = ({
 }: CharacterDetailsCardProps) => (
   <div className='pt-8 pb-12 bg-white rounded-3xl'>
     <div className='relative w-[75px] h-[75px]'>
-      <Avatar src={image} alt={name} />
+      <Avatar src={image} alt={name} className='w-[75px] h-[75px]' />
       {isFavorite && (
         <div className='absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 bg-white rounded-full p-1'>
           <Heart filled />
