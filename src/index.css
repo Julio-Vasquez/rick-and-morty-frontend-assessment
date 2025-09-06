@@ -1,11 +1,28 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'Greycliff CF';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/src/presentation/assets/fonts/greycliff-cf-regular.woff2')
+      format('woff2'),
+    url('/src/presentation/assets/fonts/greycliff-cf-regular.woff') format('woff');
+}
+
 /* Define theme variables for Tailwind */
 @theme {
   --color-primary-100: #ebddfe;
   --color-primary-600: #7c4ddb;
   --color-primary-700: #5b31b5;
   --color-secondary-600: #52e066;
+  --font-greycliff: 'Greycliff CF', sans-serif;
+}
+
+@property --font-greycliff {
+  syntax: '<family-name>';
+  inherits: true;
+  initial-value: sans-serif;
 }
 
 /* Register the same variables with @property (for animations / typing) */
