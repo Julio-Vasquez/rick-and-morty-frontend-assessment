@@ -41,6 +41,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router": "^7.8.2",
+    "rxjs": "^7.8.2",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
@@ -64,6 +65,7 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
     "vite": "^7.1.2",
+    "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
   },
   "engines": {
