@@ -1,6 +1,10 @@
-# Documentación del Proyecto: Rick and Morty Character Explorer
+# Documentación del Proyecto: Rick and Morty Character
 
 Este documento proporciona una descripción general completa del proyecto, su arquitectura, tecnologías y cómo ponerlo en marcha.
+
+Para una documentación más visual e interactiva, ¡explora nuestro Deep-Wiki!
+
+[![Deep-Wiki](https://deepwiki.com/badge/Julio-Vasquez/rick-and-morty-frontend-assessment)](https://deepwiki.com/Julio-Vasquez/rick-and-morty-frontend-assessment)
 
 ## 1. ¿Qué es este proyecto?
 
@@ -138,7 +142,7 @@ Contiene las implementaciones concretas de las interfaces definidas en el domini
 Es la capa más externa, responsable de la interfaz de usuario (UI). Depende de la capa de Aplicación. Su estructura de componentes sigue la metodología **Atomic Design** para fomentar la reutilización y la consistencia.
 
 - `presentation/components`: Componentes de React reutilizables, organizados por complejidad (`atoms`, `molecules`, `organism`, `templates`).
-- `presentation/pages`: Las vistas principales de la aplicación (ej. `Home`, `Character`), que componen los organismos y plantillas.
+- `presentation/pages`: Las vistas principales de la aplicación (ej. `Home`, `Character`).
 - `presentation/hooks`: Hooks de React personalizados que encapsulan la lógica de la UI y la comunicación con los casos de uso.
 - `presentation/context`: Proveedores de contexto de React, cruciales para la Inyección de Dependencias.
 - `presentation/routes`: Configuración del enrutamiento de la aplicación.
