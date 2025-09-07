@@ -8,4 +8,5 @@ export interface ButtonProps {
   onClick?: () => void
   className?: string
   variant?: VariantsButton
+  isDisabled: boolean
 }
