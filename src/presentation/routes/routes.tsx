@@ -1,7 +1,8 @@
-import Layout from '@presentation/components/templates/Layout'
-import { PATHS } from '@presentation/constants/routes'
 import type { RouteObject } from 'react-router'
 import { createBrowserRouter, Navigate } from 'react-router'
+
+import { PATHS } from '@presentation/constants/routes'
+import Layout from '@presentation/components/templates/Layout'
 
 const routes: RouteObject[] = [
   {
