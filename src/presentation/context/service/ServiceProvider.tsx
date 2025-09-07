@@ -4,7 +4,7 @@ import { ServicesContext } from './service-context'
 import createApolloClient from '@infrastructure/api/client'
 import { API_URL } from '@presentation/constants/environment'
 import type { ServiceProviderProps, Services } from './service-type'
-import { makeGetCharacters, makeGetCharacterById } from '@application/use-cases'
+import { getCharacters, getCharacterById } from '@application/use-cases'
 import type { CharacterRepository } from '@domain/repositories/character-repository'
 import { CharacterGraphQLRepository } from '@infrastructure/api/repositories/character-repository'
 
@@ -26,8 +26,8 @@ export function ServicesProvider({
 
     // 3) Bind use cases
     const baseServices: Services = {
-      getCharacters: makeGetCharacters(characterRepository),
-      getCharacterById: makeGetCharacterById(characterRepository),
+      getCharacters: getCharacters(characterRepository),
+      getCharacterById: getCharacterById(characterRepository),
     }
 
     // 4) Allow test overrides without module mocks

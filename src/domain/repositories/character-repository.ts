@@ -6,6 +6,6 @@ import type {
 } from '@domain/types/character-list-params'
 
 export interface CharacterRepository {
-  list(params?: CharacterListParams): Promise<CharacterList>
+  getList(params?: CharacterListParams): Promise<CharacterList>
   getById(id: string): Promise<CharacterEntity>
 }

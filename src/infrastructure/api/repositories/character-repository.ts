@@ -15,7 +15,7 @@ import type {
 export class CharacterGraphQLRepository implements CharacterRepository {
   constructor(private client: ApolloClient) {}
 
-  async list(params: CharacterListParams = {}): Promise<CharacterList> {
+  async getList(params: CharacterListParams = {}): Promise<CharacterList> {
     const { data } = await this.client.query<GetCharactersData, CharacterListParams>(
       { query: GET_CHARACTERS, variables: params }
     )

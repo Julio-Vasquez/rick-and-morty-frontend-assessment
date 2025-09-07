@@ -5,9 +5,9 @@ import type { CharacterRepository } from '@domain/repositories/character-reposit
  * Use case: get list of characters.
  * Encapsulates the domain intent and delegates to the data source.
  */
-export function makeGetCharacters(repository: CharacterRepository) {
+export function getCharacters(repository: CharacterRepository) {
   return async (params: CharacterListParams = {}) => {
-    const result = await repository.list(params) // { items, total }
+    const result = await repository.getList(params) // { items, total }
     return result
   }
 }
