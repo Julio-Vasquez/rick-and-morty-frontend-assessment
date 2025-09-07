@@ -1,18 +1,16 @@
-import { useCharacters } from '@presentation/hooks/api/useCharacters'
-import { usePagination } from '@presentation/hooks/pagination/usePagination'
-
+import CharacterListSection from '../character-list-section'
 import type { CharacterEntity } from '@domain/entities/character-entity'
 import { useFavorites } from '@presentation/hooks/contexts/useFavorites'
 
-import CharacterListSection from '../character-list-section'
+import type { CharacterListProps } from './character-list-type'
 
-const CharacterList = () => {
-  const { items, refetch, total } = useCharacters()
-  const { addFavorite, listFavorites, removeFavorite } = useFavorites()
-  const { nextPage, hasNext, page, hasPrev, prevPage } = usePagination(total)
-  const favoriteIds = new Set(listFavorites.map(e => e.id))
-
-  const filteredData = items.filter(item => !favoriteIds.has(item.id))
+const CharacterList = ({
+  characters,
+  favorites,
+  onSortCharacters,
+  onSortFavorites,
+}: CharacterListProps) => {
+  const { addFavorite, removeFavorite } = useFavorites()
 
   const handleSetFavorite = (e: CharacterEntity, isFavorite: boolean) => {
     if (!isFavorite) addFavorite(e)
@@ -23,20 +21,22 @@ const CharacterList = () => {
     <div className='overflow-hidden'>
       <CharacterListSection
         title='Favorites'
-        items={listFavorites}
+        items={favorites}
         isFavorite
         onToggleFavorite={c => handleSetFavorite(c, true)}
         heightClass='max-h-[33.333dvh]'
         emptyText='No favorites yet'
         className='mb-6'
+        onSort={onSortFavorites}
       />
 
       <CharacterListSection
         title='CHARACTERS'
-        items={filteredData}
+        items={characters}
         onToggleFavorite={c => handleSetFavorite(c, false)}
-        heightClass='max-h-[50dvh]' // ocupa el resto del alto
+        heightClass='max-h-[44.1dvh]' // ocupa el resto del alto
         emptyText='No characters found'
+        onSort={onSortCharacters}
       />
     </div>
   )
