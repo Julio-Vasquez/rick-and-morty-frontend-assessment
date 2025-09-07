@@ -1,7 +1,9 @@
-import type { LayoutProps } from './layout-type'
+import { Outlet } from 'react-router'
+import CharacterList from '@presentation/components/organisms/characters-list/CharacterList'
+
 import SearchBar from '@presentation/components/organisms/search-bar'
 
-const Layout = ({ children }: LayoutProps) => (
+const Layout = () => (
   <div
     className='min-h-dvh bg-white text-neutral-900 font-greycliff'
     data-testid='main-layout'
@@ -16,13 +18,17 @@ const Layout = ({ children }: LayoutProps) => (
           <SearchBar />
         </div>
         <div className='flex-1 overflow-y-auto'>
-          <div className='p-6 text-sm text-neutral-500'>Sidebar content</div>
+          <div className='p-6 text-sm text-neutral-500'>
+            <CharacterList />
+          </div>
         </div>
       </aside>
       {/* Main Content */}
       <main className='hidden md:block min-h-dvh' aria-label='detail-panel'>
         <div className='h-full overflow-y-auto'>
-          <div className='px-8 lg:px-16 py-8'>{children}</div>
+          <div className='px-8 lg:px-16 py-8'>
+            <Outlet />
+          </div>
         </div>
       </main>
     </div>
