@@ -4,6 +4,7 @@ import type { InfoRowProps } from './info-row-type'
 
 const InfoRow = ({ label, value, isLast }: InfoRowProps) => {
   const computedClassName = `border-neutral-200 pb-2 ${isLast ? '' : ' border-b'}`
+  const computedValue = value === '' ? 'NA' : value
 
   return (
     <div className={computedClassName}>
@@ -11,7 +12,7 @@ const InfoRow = ({ label, value, isLast }: InfoRowProps) => {
         {label}
       </Text>
       <Text size='m' weight='normal' className='text-gray-500'>
-        {value}
+        {computedValue}
       </Text>
     </div>
   )

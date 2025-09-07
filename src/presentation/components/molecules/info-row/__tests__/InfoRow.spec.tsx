@@ -19,6 +19,13 @@ describe('InfoRow', () => {
     expect(screen.getByText('Human')).toBeInTheDocument()
   })
 
+  test('should render "NA" when value is empty', () => {
+    render(<InfoRow label='Species' value='' isLast={false} />)
+
+    expect(screen.getByText('Species')).toBeInTheDocument()
+    expect(screen.getByText('NA')).toBeInTheDocument()
+  })
+
   test('should not have a bottom border when it is the last item', () => {
     render(<InfoRow label='Species' value='Human' isLast={true} />)
 
