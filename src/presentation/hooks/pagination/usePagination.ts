@@ -26,7 +26,7 @@ export const usePagination = (total: number, options?: UsePaginationOptions) => 
   return {
     page: state.page,
     pageSize: PAGE_SIZE,
-    pages,
+    totalPages: pages,
     hasPrev,
     hasNext,
 
