@@ -5,4 +5,5 @@ export interface CharacterItemProps {
   isFavorite?: boolean
   onToggleFavorite: () => void
   className?: string
+  id: string
 }

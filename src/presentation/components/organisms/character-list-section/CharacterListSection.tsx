@@ -22,6 +22,7 @@ const CharacterListSection = ({
           items.map(character => (
             <CharacterItem
               key={character.id}
+              id={character.id}
               image={character.image}
               name={character.name}
               species={character.species}
