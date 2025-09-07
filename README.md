@@ -4,7 +4,7 @@ Este documento proporciona una descripción general completa del proyecto, su ar
 
 Para una documentación más visual e interactiva, ¡explora nuestro Deep-Wiki!
 
-[![Deep-Wiki](https://deepwiki.com/badge/Julio-Vasquez/rick-and-morty-frontend-assessment)](https://deepwiki.com/Julio-Vasquez/rick-and-morty-frontend-assessment)
+[![Rick and Morty Frontend Assessment](https://img.shields.io/badge/Rick%20and%20Morty-Frontend%20Assessment-brightgreen)](https://deepwiki.com/Julio-Vasquez/rick-and-morty-frontend-assessment)
 
 ## 1. ¿Qué es este proyecto?
 
