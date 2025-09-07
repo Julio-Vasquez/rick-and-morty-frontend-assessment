@@ -49,3 +49,13 @@
   inherits: false;
   initial-value: #52e066;
 }
+
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+}
