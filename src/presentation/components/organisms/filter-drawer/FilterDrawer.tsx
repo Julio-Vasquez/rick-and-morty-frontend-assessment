@@ -1,8 +1,7 @@
 import FilterContent from '../filter-content/FilterContent'
+import type { FilterDrawerProps } from './filter-drawer-type'
 
-type FilterDrawerProps = { onClose: () => void }
-
-const FilterDrawer = ({ onClose }: FilterDrawerProps) => {
+const FilterDrawer = ({ onClose, refetch }: FilterDrawerProps) => {
   return (
     <>
       <div
@@ -34,7 +33,7 @@ const FilterDrawer = ({ onClose }: FilterDrawerProps) => {
         </div>
 
         <div className='flex-1 overflow-y-auto p-4'>
-          <FilterContent onClose={onClose} />
+          <FilterContent onClose={onClose} refetch={refetch} />
         </div>
       </div>
     </>
