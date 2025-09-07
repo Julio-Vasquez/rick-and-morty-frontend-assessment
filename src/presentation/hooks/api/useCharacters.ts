@@ -11,7 +11,7 @@ import type {
  * Lists characters using the injected use case (DI).
  * Exposes an imperative fetch function to control when to load.
  */
-export function useCharacters() {
+export function useCharacters(fetchOnCall: boolean = true) {
   const { getCharacters } = useServices()
 
   const [items, setItems] = useState<CharacterEntity[]>([])
@@ -37,8 +37,8 @@ export function useCharacters() {
   )
 
   useEffect(() => {
-    void fetchCharacters({})
-  }, [fetchCharacters])
+    if (fetchOnCall) void fetchCharacters()
+  }, [fetchCharacters, fetchOnCall])
 
   return { items, total, loading, error, refetch: fetchCharacters }
 }
